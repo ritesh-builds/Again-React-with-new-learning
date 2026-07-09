@@ -8,9 +8,10 @@ function Navbar() {
           <Link to='https://github.com/ritesh-builds'><h2 className='text-xl font-bold'>Comfort Footwear</h2></Link>
           <div className='flex gap-8'>
             <Link to="/">Home</Link>
-            <Link to="Contact">About</Link>
-            <Link to="About">Contact</Link>
-            <Link to="Product">Product</Link>
+            <Link to="about">About</Link>
+            <Link to="contact">Contact</Link>
+            <Link to="product">Product</Link>
+            <Link to="courses">Courses</Link>
           </div>
       </div>
   )
