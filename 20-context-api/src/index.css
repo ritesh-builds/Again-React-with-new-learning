@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: black;
+    color: white;
+    font-family: sans-serif;
+}
+
+.light{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightseagreen;
+    padding: 10px 30px;
+    align-items: center;
+}
+
+.dark{
+    background-color: darkblue;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 30px;
+    align-items: center;
+}
+
+.nav2{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+button{
+    padding: 10px;
+    background: rgb(6, 191, 6);
+    margin: 10px;
+    border-radius: 6px;
+}
