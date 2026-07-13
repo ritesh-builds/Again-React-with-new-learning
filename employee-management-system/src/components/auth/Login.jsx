@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
 import { Mail, Lock } from 'lucide-react'
+
+
 function Login({handleLogin}) {
-
-  console.log(handleLogin);
-  
-
+  // console.log(handleLogin);
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
 
@@ -12,8 +11,8 @@ function Login({handleLogin}) {
     e.preventDefault()
     handleLogin(email, password)
     console.log("form submitted..");
-    console.log(`email is ${email}`);
-    console.log(`password is ${password}`);
+    // console.log(`email is ${email}`);
+    // console.log(`password is ${password}`);
     setEmail('')
     setPassword('')
   }
@@ -72,7 +71,7 @@ function Login({handleLogin}) {
                 <p>Remember me</p>
               </div>
               
-              <p className='text-red-600'>forget Passowrd</p>
+              <p className='text-red-600'>forget Passowrd?</p>
 
             </div>
             
