@@ -1,9 +1,13 @@
 import React from 'react'
 
-function AuthContext() {
+function AuthContext(props) {
+    // useEffect(() => {
+  //   setLocalStorage()
+  //   getLocalStorage()
+  // },[] )
   return (
     <div>
-      
+      {props.children}
     </div>
   )
 }
