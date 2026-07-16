@@ -1,7 +1,8 @@
 const employees = [
   {
     id: 1,
-    email: "john.doe@example.com",
+    name: "Ananya",
+    email: "ananya@ritesh.com",
     password: "123",
     tasks: [
       {
@@ -38,7 +39,8 @@ const employees = [
   },
   {
     id: 2,
-    email: "jane.smith@example.com",
+    name: "Kavya",
+    email: "kavya@ritesh.com",
     password: "123",
     tasks: [
       {
@@ -85,7 +87,8 @@ const employees = [
   },
   {
     id: 3,
-    email: "michael.brown@example.com",
+    name: "Aadhya ",
+    email: "aadhya@ritesh.com",
     password: "123",
     tasks: [
       {
@@ -122,7 +125,8 @@ const employees = [
   },
   {
     id: 4,
-    email: "emily.johnson@example.com",
+    name: "Kiara ",
+    email: "kiara@ritesh.com",
     password: "123",
     tasks: [
       {
@@ -169,7 +173,8 @@ const employees = [
   },
   {
     id: 5,
-    email: "david.wilson@example.com",
+    name: "Siya ",
+    email: "siya@ritesh.com",
     password: "123",
     tasks: [
       {
@@ -229,8 +234,8 @@ const employees = [
 const admin = [
   {
     id: 101,
-    email: "admin@example.com",
-    password: "123" 
+    email: "radhika@ritesh.com",
+    password: "123"
   }
 ];
 
