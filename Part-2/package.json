@@ -15,9 +15,10 @@
   },
   "license": "ISC",
   "author": "Ritesh Kumar",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "test": "jest"
+  "start": "parcel index.html",
+  "build": "parcel build index.html"
   },
   "devDependencies": {
     "parcel": "^2.16.4"
