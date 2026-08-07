@@ -1,0 +1,26 @@
+{
+  "name": "react-with-ritesh",
+  "version": "1.0.0",
+  "description": "This is React By me Ritesh Kumar.",
+  "keywords": [
+    "react"
+  ],
+  "homepage": "https://github.com/ritesh-builds/Again-React-with-new-learning#readme",
+  "bugs": {
+    "url": "https://github.com/ritesh-builds/Again-React-with-new-learning/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ritesh-builds/Again-React-with-new-learning.git"
+  },
+  "license": "ISC",
+  "author": "Ritesh Kumar",
+  "type": "commonjs",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  }
+}
