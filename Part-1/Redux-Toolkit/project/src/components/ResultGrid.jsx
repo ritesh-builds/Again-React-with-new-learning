@@ -14,12 +14,19 @@ function ResultGrid() {
     const getData = async () => {
       let data;
       if(activeTab == "photos"){
-        const response = await fetchPhotos(query)
-        data = response.results
+        let response = await fetchPhotos(query)
+        data = response.results.map((item, idx) => (
+          {
+            id: item.id,
+            type: 'photo',
+            title: item.alt_description,
+            thumbnail: item.urls.small,
+            src: item.urls,full,
+          }))
       }
       if(activeTab == "video"){
-        const response = await fetchVideos(query)
-        data = response.results
+        let response = await fetchVideos(query)
+        data = response.results 
       }
 
       console.log(data);
