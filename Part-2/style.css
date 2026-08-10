@@ -50,71 +50,103 @@ html {
 /* Food Card */
 
 .food-card {
-  width: 280px;
-  background: #181818;
+    width: 280px;
+    background: #181818;
 
-  border-radius: 16px;
-  overflow: hidden;
+    border-radius: 16px;
+    overflow: hidden;
 
-  border: 1px solid rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 
-  transition: 0.3s ease;
-  cursor: pointer;
+    transition: 0.3s ease;
+    cursor: pointer;
 }
 
 .food-card:hover {
-  transform: translateY(-8px);
+    transform: translateY(-8px);
+}
+
+.img-container {
+    padding: 10px;
 }
 
 .food-image {
-  width: 100%;
-  height: 190px;
+    width: 100%;
+    height: 190px;
 
-  object-fit: cover;
-  display: block;
+    object-fit: cover;
+    display: block;
+
+    border-radius: 12px;
 }
 
 .food-info {
-  padding: 16px;
+    padding: 6px 16px 16px;
 }
 
 .food-info h2 {
-  color: white;
-  font-size: 20px;
-  margin-bottom: 8px;
+    color: white;
+    font-size: 20px;
+    margin-bottom: 6px;
 }
 
 .restaurant-name {
-  color: #999;
-  font-size: 14px;
-  margin-bottom: 15px;
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.address {
+    color: #aaa;
+    font-size: 13px;
+    line-height: 1.5;
+
+    margin-bottom: 12px;
+
+    white-space: normal;
+    overflow: visible;
+    word-wrap: break-word;
 }
 
 .food-details {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 12px;
 }
 
 .price {
-  color: #ffb703;
-  font-size: 18px;
-  font-weight: bold;
+    color: #ffb703;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .delivery-time {
-  color: #bbb;
+    color: #bbb;
 
-  background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.08);
 
-  padding: 6px 10px;
-  border-radius: 8px;
+    padding: 6px 10px;
+    border-radius: 8px;
 
-  font-size: 13px;
+    font-size: 13px;
 }
 
+.rating {
+    display: inline-block;
+
+    color: white;
+    background: #267e3e;
+
+    padding: 5px 9px;
+    border-radius: 7px;
+
+    font-size: 13px;
+    font-weight: bold;
+}
 /* Search */
 
 .search {
@@ -151,4 +183,43 @@ html {
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
     padding: 10px;
+}
+.search-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.search {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px;
+}
+
+.search input {
+    width: 400px;
+    padding: 12px 15px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    font-size: 16px;
+}
+
+.search button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: large;
+    background-color: #ffb703;
+}
+
+.search button:hover {
+    background-color: #e2a712;
+}
+
+.cards {
+    display: grid;
 }
