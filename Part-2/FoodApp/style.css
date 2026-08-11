@@ -49,15 +49,32 @@ html {
   color: white; /* Links ko clear dikhane ke liye */
 }
 
-.nav-items ul li:hover {
-  color: #dd6408;
+.nav-items > ul > li {
+  padding: 8px 12px;
+  margin: 0 5px;
+  font-size: larger;
+  font-weight: 600; 
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
 }
 
-.nav-items > ul > li {
-  padding: 10px;
-  margin: 10px;
-  cursor: pointer;
+.nav-items ul li:hover {
+  color: #dd6408;
+  transform: translateY(-2px); 
 }
+
+/* .nav-items > ul > li {
+  padding: 8px 12px;
+  margin: 0 5px;
+  font-size: large;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-items ul li:hover {
+  color: #dd6408;
+  text-shadow: 0 0 0.6px #dd6408, 0 0 0.6px #dd6408; 
+} */
 
 .logo {
   height: 100px;
