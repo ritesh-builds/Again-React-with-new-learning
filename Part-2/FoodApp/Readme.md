@@ -34,4 +34,22 @@
  *  - Links
  *  - Address
  *  - Contact
- */
+ 
+ ---
+
+# Named Import/Export
+
+- export const Component;
+- import {Component} from "path";
+
+# Default Import/Export
+
+- export default Component
+- import Component from "path";
+
+# React Hookes
+
+- (Normal Js utility Functions)
+
+- useState() - Superpowerful State Variables in React.
+- useEffect()
