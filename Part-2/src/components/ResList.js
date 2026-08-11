@@ -1,30 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
+import React from 'react'
 
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://imgs.search.brave.com/RRO0wYmlFI_Ox9FscLpO4J2GVLM2e90p1zxn6PlCesI/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNzUv/NjUxLzQzOC9zbWFs/bC9jb2xvcmZ1bC1m/YXN0LWZvb2QtY2Fy/dC13aXRoLWJ1cmdl/ci1mcmllcy1hbmQt/ZHJpbmstaXNvbGF0/ZWQtb24tdHJhbnNw/YXJlbnQtYmFja2dy/b3VuZC1mcmVlLXBu/Zy5wbmc"
-          alt="Logo"
-        />
-      </div>
-
-      <div className="nav-items">
-        <ul>
-          <li>🏠Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>🛒Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-
-const resList = {
+const ResList = {
   cards: [
     {
       "card": {
@@ -4272,83 +4248,4 @@ const resList = {
   ]
 };
 
-const FoodCard = (props) => {
-  const { resData } = props;
-
-  const {cloudinaryImageId, name, address, costForTwoMessage, deliveryTime, avgRatingString} = resData.info;
-
-  // Agar galti se koi khali card aata hai, toh app crash na kare isliye check laga diya...
-  if (!resData || !resData.info) return null;
-
-  return (
-    <div className="food-card">
-      <div className="img-container">
-        <img
-          className="food-image"
-          src={`https://media-assets.swiggy.com/swiggy/image/upload/${resData.info.cloudinaryImageId}`}
-          alt={resData.info.name}
-        />
-      </div>
-
-      <div className="food-info">
-        {/* Optional chaining taaki cuisines na hone par code na fate */}
-        <h2>{resData.info.cuisines?.join(", ")}</h2>
-
-        <p className="restaurant-name">{name}</p>
-
-        <p className="address">📍 {address}</p>
-
-        <div className="food-details">
-          <span className="price">💰 {costForTwoMessage}</span>
-
-          <span className="delivery-time">
-            🛵 {deliveryTime} min
-          </span>
-        </div>
-
-        <div className="rating">⭐ {avgRatingString}</div>
-      </div>
-    </div>
-  );
-};
-
-const Body = () => {
-  // Array ke andar se sirf restaurants wali list nikalna
-  const restaurantCards = resList?.cards[1]?.groupedCard?.cardGroupMap?.RESTAURANT?.cards || [];
-
-  return (
-    <div className="body">
-      <div className="search">
-        <input type="text" placeholder="Search for food..." />
-        <button>Search</button>
-      </div>
-
-      <div className="res-container">
-        {restaurantCards.map((restaurant) => (
-          <FoodCard
-            key={restaurant?.card?.card?.info?.id}
-            resData={restaurant?.card?.card}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-const Footer = () => {
-  return <div className="footer"></div>;
-};
-
-const AppLayout = () => {
-  return (
-    <>
-      <Header />
-      <Body />
-      <Footer />
-    </>
-  );
-};
-
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-root.render(<AppLayout />);
+export default ResList;

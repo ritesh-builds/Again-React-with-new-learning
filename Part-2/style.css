@@ -21,19 +21,36 @@ html {
   align-items: center;
 
   border-radius: 20px;
-  padding: 10px;
-
-  background-color: rgb(204, 202, 202);
-
+  padding: 10px 20px;
   margin: 20px;
 
   font-size: 16px;
   height: 80px;
+
+  /* Floating Sticky Effect */
+  position: sticky;
+  top: 20px;
+  z-index: 1000;
+
+  /* ✨ Option 1: Dark Glass Effect ✨ */
+  background: rgba(30, 30, 30, 0.6); /* Transparent Dark */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Halka white border */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  color: white; /* Text color ko white karr diya */
+
+  /* Blur Effect */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support ke liye */
 }
 
 .nav-items > ul {
   display: flex;
   list-style-type: none;
+  color: white; /* Links ko clear dikhane ke liye */
+}
+
+.nav-items ul li:hover {
+  color: #dd6408;
 }
 
 .nav-items > ul > li {
@@ -164,6 +181,9 @@ html {
   width: 400px;
   padding: 14px 18px;
 
+  background-color: #383535;
+  color: white;
+
   border: none;
   border-radius: 12px;
 
@@ -226,4 +246,86 @@ html {
 
 .cards {
     display: grid;
+}
+
+/* Footer */
+
+  .footer {
+    background-color: #02060c;
+    color: white;
+    padding: 20px; 
+    font-family: sans-serif;
+    
+    /* Fixed rakhne ke liye zaroori CSS */
+    /* position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100; Taaki cards iske upar na aayein */
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  border-bottom: 1px solid #333;
+  padding-bottom: 20px;
+}
+
+.footer-brand h2 {
+  margin-bottom: 5px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+  color: #a9a9a9;
+  cursor: pointer;
+}
+
+.footer-links li strong {
+  color: white;
+  font-size: 1.1rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  color: #a9a9a9;
+}
+
+
+/* filter button */
+/* Filter Button ki Styling */
+.filter-btn {
+  padding: 8px 16px;
+  background-color: white; 
+  color: #0f0f0f; 
+  border: 1px solid #d3d3d3; 
+  border-radius: 20px; 
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer; 
+  margin-left: 100px; 
+  transition: all 0.3s ease; 
+}
+
+.filter-btn:hover {
+  background-color: #f0f0f5;
+  border-color: #a9abb2; 
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+}
+
+/* Jab button par click ho (Active Effect) */
+.filter-btn:active {
+  transform: scale(0.95); /* Click karne par thoda sa dabega */
 }
