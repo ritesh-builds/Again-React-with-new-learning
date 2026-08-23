@@ -1,4 +1,5 @@
 import React from "react";
+import '../style.css';
 import ReactDOM from "react-dom/client";
 import 'lenis/dist/lenis.css'
 import { ReactLenis, useLenis } from 'lenis/react'
@@ -8,7 +9,9 @@ import Footer from "./components/Footer";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import LoginPage from "./components/LoginPage";
-import { createBrowserRouter, CreateBrowserRouter } from "react-router-dom";
+import Error from "./components/Error";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import RestrauntMenu from "./components/RestrauntMenu";
 
 
 
@@ -20,9 +23,9 @@ const AppLayout = () => {
 
   return (
     <>
-       <ReactLenis root />  
+      <ReactLenis root />  
       <Header />
-      <Body />
+      <Outlet />
       <Footer />      
     </>
   );
@@ -31,23 +34,39 @@ const AppLayout = () => {
 const appRouter = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />
-  },
-  {
-    path: "/about",
-    element: <About />
-  },
-  {
-    path: "/contact",
-    element: <Contact />
-  },
-  {
-    path: "/login",
-    element: <LoginPage />
-  }
+    element: <AppLayout />,
+    children: [
+      {
+        path: "/",
+        element: <Body />
+      },
 
+      {
+        path: "/about",
+        element: <About />
+      },
+
+      {
+        path: "/contact",
+        element: <Contact />
+      },
+
+      {
+        path: "/restraunts/:resId",
+        element: <RestrauntMenu/>
+      },
+
+      {
+        path: "/login",
+        element: <LoginPage />
+      }
+    ],
+    errorElement: <Error />
+  }
 ])
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<AppLayout />);
+root.render(
+  <RouterProvider router={appRouter} /> 
+);
