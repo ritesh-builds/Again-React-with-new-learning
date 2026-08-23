@@ -85,7 +85,7 @@ html {
 /* Food Card */
 
 .food-card {
-    width: 380px;
+    width: 300px;
     /* height: max-content; */
     background: #181818;
 
@@ -221,7 +221,7 @@ html {
 
 .res-container {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 10px;
     padding: 10px;
 }
@@ -325,7 +325,7 @@ html {
 /* Filter Button ki Styling */
 .filter-btn {
   padding: 8px 16px;
-  background-color: white; 
+  background-color: #fc8019; 
   color: #0f0f0f; 
   border: 1px solid #d3d3d3; 
   border-radius: 20px; 
@@ -337,12 +337,360 @@ html {
 }
 
 .filter-btn:hover {
-  background-color: #f0f0f5;
+  background-color: #de6c0e;
   border-color: #a9abb2; 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Jab button par click ho (Active Effect) */
-.filter-btn:active {
-  transform: scale(0.95); /* Click karne par thoda sa dabega */
+/* ==========================================
+   MOBILE & SMARTPHONE RESPONSIVE MEDIA QUERY
+   ========================================== */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Header ko adjust karo taaki phone pe overflow na ho */
+  .header {
+    height: auto;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 14px;
+    top: 10px;
+  }
+
+  .logo {
+    height: 60px; /* Logo ka size chota kiya */
+  }
+
+  .nav-items > ul {
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .nav-items > ul > li {
+    padding: 5px 8px;
+    font-size: 13px;
+  }
+
+  /* 2. Search bar aur Filter Button ko phone friendly banao */
+  .search {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    margin: 15px 10px;
+  }
+
+  .search input {
+    width: 100%; /* Input box poori screen ki width lega */
+    max-width: 350px;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .search button, 
+  .filter-btn {
+    width: 100%;
+    max-width: 350px;
+    margin-left: 0 !important; /* Desktop wala margin-left: 100px hata diya */
+  }
+
+  /* 3. Restaurant Cards Grid ko 3 columns se 1 column par lao */
+  .res-container {
+    grid-template-columns: 1fr; /* Mobile par sirf 1 card ek line mein aayega */
+    gap: 15px;
+    padding: 10px;
+    justify-items: center; /* Cards ko center align karega */
+  }
+
+  .food-card {
+    width: 100%;
+    max-width: 360px; /* Phone pe card width control rahegi */
+  }
+
+  /* 4. Footer ko column layout mein badlo */
+  .footer-top {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}
+
+.shimmer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    padding: 10px;
+}
+
+/* Yeh tera purana glassmorphism wala code hi hai */
+.shimmer-card {
+    width: 250px; /* Width thodi kam ki hai taaki grid mein fit aayein */
+    height: 300px; 
+    background: rgba(188, 185, 185, 0.03);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid rgba(8, 8, 8, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent
+    );
+    animation: shimmerWave 1.5s infinite linear;
+}
+
+@keyframes shimmerWave {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
+/* login-btn */
+.login-btn {
+  width: 110px;
+  padding: 10px 0; /* Height ko padding se control karna better hai */
+  border-radius: 8px;
+  background-color: #fc8019; /* Premium Orange */
+  font-size: large;
+  font-weight: 600;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Hover par button upar aayega aur glow badhega */
+.login-btn:hover {
+  background-color: #e06c10;
+  box-shadow: 0 6px 10px rgba(252, 128, 25, 0.5);
+  color: #02060c;
+}
+
+/* Poori screen ko cover karne aur form ko center karne ke liye */
+.login-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: #111827; /* Dark background */
+  padding: 0 20px;
+  font-family: sans-serif;
+}
+
+/* Glassmorphism Effect */
+.glass-form-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px 30px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.form-header h2 {
+  color: #ffffff;
+  font-size: 2rem;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.5px;
+}
+
+.form-header p {
+  color: #d1d5db;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #e5e7eb;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+/* LoginPage.css */
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #060a12; /* Dark slate background */
+  padding: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Glassmorphism Effect */
+.glass-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 2.5rem 2rem;
+  border-radius: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+.card-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.card-header h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #f3f4f6;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: 1px;
+}
+
+.card-header p {
+  color: #9ca3af;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #d1d5db;
+  margin-bottom: 0.4rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 0.75rem;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  font-size: 0.95rem;
+  box-sizing: border-box;
+  transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+  color: #276ed7;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: rgba(59, 130, 246, 0.6);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.25);
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.remember-me:hover {
+  color: #e5e7eb;
+}
+
+.remember-me input {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.forgot-password {
+  font-size: 0.85rem;
+  color: #60a5fa;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.forgot-password:hover {
+  color: #93c5fd;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.9rem;
+  margin-top: 1rem;
+  border-radius: 0.75rem;
+  background-color: rgba(37, 99, 235, 0.85);
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  transition: all 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: rgb(37, 99, 235);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
+}
+
+.footer-text {
+  margin-top: 2rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.footer-text a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.footer-text a:hover {
+  color: #93c5fd;
 }

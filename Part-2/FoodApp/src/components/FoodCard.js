@@ -2,9 +2,19 @@ import React from 'react'
 import { CDN_URL } from '../utils/constants';
 
 const FoodCard = (props) => {
+  
   const { resData } = props;
 
-  const {cloudinaryImageId, name, address, costForTwoMessage, deliveryTime, avgRatingString} = resData.info;
+  const {
+          cloudinaryImageId, 
+          name, 
+          address, 
+          costForTwoMessage, 
+          deliveryTime, 
+          cuisines, 
+          avgRatingString,
+          sla
+        } = resData.info;
 
   // Agar galti se koi khali card aata hai, toh app crash na kare isliye check laga diya...
   if (!resData || !resData.info) return null;
@@ -28,10 +38,10 @@ const FoodCard = (props) => {
         <p className="address">📍 {address}</p>
 
         <div className="food-details">
-          <span className="price">💰 {costForTwoMessage}</span>
+          <span className="price">{costForTwoMessage}</span>
 
           <span className="delivery-time">
-            🛵 {deliveryTime} min
+            🛵 {sla?.slaString}
           </span>
         </div>
 
