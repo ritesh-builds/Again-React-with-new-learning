@@ -921,3 +921,124 @@ html {
         grid-template-columns: 1fr;
     }
 }
+
+/* error */
+.error-container {
+    min-height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    background: #000;
+    color: white;
+}
+
+.error-card {
+    width: 90%;
+    max-width: 700px;
+    padding: 50px 30px;
+    text-align: center;
+    border-radius: 20px;
+    background: #171717;
+    border: 1px solid #333;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+}
+
+.error-emoji {
+    font-size: 60px;
+    margin-bottom: 10px;
+}
+
+.error-code {
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 1;
+    color: #ff9f00;
+    margin-bottom: 20px;
+}
+
+.error-card h1 {
+    margin: 0 0 15px;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.error-card p {
+    max-width: 500px;
+    margin: 0 auto;
+    color: #999;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.error-details {
+    display: block;
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.error-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 35px;
+}
+
+.error-buttons button {
+    padding: 13px 22px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.home-button {
+    border: none;
+    background: #ff9f00;
+    color: #111;
+}
+
+.home-button:hover {
+    background: #ffb52e;
+    transform: translateY(-2px);
+}
+
+.back-button {
+    border: 1px solid #444;
+    background: transparent;
+    color: white;
+}
+
+.back-button:hover {
+    border-color: #ff9f00;
+    color: #ff9f00;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 600px) {
+    .error-card {
+        padding: 35px 20px;
+    }
+
+    .error-code {
+        font-size: 75px;
+    }
+
+    .error-card h1 {
+        font-size: 28px;
+    }
+
+    .error-card p {
+        font-size: 16px;
+    }
+
+    .error-buttons {
+        flex-direction: column;
+    }
+
+    .error-buttons button {
+        width: 100%;
+    }
+}

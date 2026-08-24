@@ -1,36 +1,60 @@
 import React from "react";
-import { useRouteError } from "react-router-dom";
+import { useRouteError, useNavigate } from "react-router-dom";
 
 const Error = () => {
     const err = useRouteError();
+    const navigate = useNavigate();
+
     console.log(err);
-    
-  return (
-    <div className="flex h-85 w-full items-center justify-center bg-black px-5 text-white">
-      <div className="text-center">
 
-        <div className="mb-6 text-8xl font-bold text-orange-500">
-          404
+    return (
+        <div className="error-container">
+            <div className="error-card">
+
+                <div className="error-emoji">
+                    🍔
+                </div>
+
+                <div className="error-code">
+                    404
+                </div>
+
+                <h1>
+                    Oops! Page Not Found 😕
+                </h1>
+
+                <p>
+                    Looks like this page went out for delivery
+                    and never reached its destination. 🍕
+                </p>
+
+                {err?.statusText && (
+                    <span className="error-details">
+                        {err.statusText}
+                    </span>
+                )}
+
+                <div className="error-buttons">
+
+                    <button
+                        onClick={() => navigate("/")}
+                        className="home-button"
+                    >
+                        🏠 Go Home
+                    </button>
+
+                    <button
+                        onClick={() => navigate(-1)}
+                        className="back-button"
+                    >
+                        ← Go Back
+                    </button>
+
+                </div>
+
+            </div>
         </div>
-
-        <h1 className="mb-3 text-4xl font-bold">
-          OOPS!! 😕
-        </h1>
-
-        <h2 className="mb-8 text-lg text-gray-400">
-          Something went wrong. We couldn't find this page.
-        </h2>
-
-        <button
-          onClick={() => window.location.href = "/"}
-          className="rounded-xl bg-orange-500 px-6 py-3 font-semibold text-white transition hover:bg-orange-600"
-        >
-          Go back Home 🍔
-        </button>
-
-      </div>
-    </div>
-  );
+    );
 };
 
 export default Error;

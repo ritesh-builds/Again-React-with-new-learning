@@ -13,8 +13,6 @@ import Error from "./components/Error";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import RestrauntMenu from "./components/RestrauntMenu";
 
-
-
 const AppLayout = () => {
   const lenis = useLenis((lenis) => {
   // called every scroll
