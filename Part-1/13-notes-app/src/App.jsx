@@ -50,7 +50,7 @@ function App() {
         className="w-full lg:w-1/2 flex flex-col gap-5"
       >
         <h1 className="text-3xl font-bold">Add Notes</h1>
-        {/* pehla input for heading */}
+        {/* first input for heading */}
         <input
           type="text"
           placeholder="Enter Notes Heading"
@@ -60,7 +60,7 @@ function App() {
             titleInput(evt)
           }}
         />
-        {/* detail wala input  */}
+        {/* detail input  */}
         <textarea
           placeholder="Write details here..."
           className="w-full h-40 border border-gray-500 rounded-lg px-4 py-3 outline-none resize-none focus:border-violet-500 scrollbar-none"

@@ -4,4 +4,4 @@ export const LOGO_URL = "https://imgs.search.brave.com/RRO0wYmlFI_Ox9FscLpO4J2GV
 
 export const SWIGGY_API = "https://www.swiggy.com/dapi/restaurants/search/v3?lat=29.6873237&lng=76.9792536&str=food&trackingId=47a3179c-c7dc-5bb1-9879-b1621f370962&submitAction=ENTER&queryUniqueId=574dd5b0-d440-ae15-613c-b091710c903f"
 
-export const RESTRAUNT_MENU_API = "http://localhost:5000/menu";
+export const RESTRAUNT_MENU_API = `https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=29.6873237&lng=76.9792536&restaurantId=726124&catalog_qa=undefined&submitAction=ENTER`;

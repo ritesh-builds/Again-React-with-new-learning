@@ -54,6 +54,7 @@ body{
   margin: 20px;
   cursor: pointer;
   transition: all .35s ;
+  font-size: large;
 }
 
 .card button:hover {

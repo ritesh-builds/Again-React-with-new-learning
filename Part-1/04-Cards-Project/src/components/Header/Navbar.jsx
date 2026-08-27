@@ -7,7 +7,7 @@ function Navbar() {
       <h2>JobFinder</h2>
 
       <div className="nav-center">
-        <a href="#">Home</a>
+        <a href="home">Home</a>
         <a href="#">Jobs</a>
         <a href="#">Companies</a>
         <a href="#">About</a>

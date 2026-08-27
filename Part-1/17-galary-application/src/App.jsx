@@ -15,7 +15,6 @@ function App() {
     console.log(lenis)
   })
 
-
   const getData = async () => {
     console.log(index);
     const response = await axios.get(`https://picsum.photos/v2/list?page=${index+1}&limit=8`)

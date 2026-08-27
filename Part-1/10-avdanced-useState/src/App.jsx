@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-function App() {
+const App = () => {
 
   const [num, setNum] = useState({user: "Ritesh", age: 29})
   const btnClicked = () => {

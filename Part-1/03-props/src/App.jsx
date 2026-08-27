@@ -5,7 +5,7 @@ function App() {
   return (
     <div className='parent'>
       <Card user="Ritesh" age={18} img="https://4kwallpapers.com/images/walls/thumbs_2t/18536.png" />
-      <Card user="Ishika" age={19} img="https://4kwallpapers.com/images/walls/thumbs_2t/15635.jpg" />
+      <Card user="Ishika" age={19} img="https://4kwallpapers.com/images/walls/thumbs_3t/22459.jpg" />
       <Card user="Radhika" age={19} img="https://4kwallpapers.com/images/walls/thumbs_2t/25602.jpg" />
     </div>
   )

@@ -6,11 +6,15 @@ import Footer from './components/Footer/Footer'
 import { ReactLenis, useLenis } from 'lenis/react'
 import { jobs } from './components/Data/Data'
 
-function App() {  
+const App = () => {  
 
   const lenis = useLenis((lenis) => {
     // called every scroll
     console.log(lenis)
+  })
+
+  jobs.map((job) => {
+    console.log(job);
   })
 
   return (

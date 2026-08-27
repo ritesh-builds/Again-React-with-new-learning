@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import MOCK_DATA from "../data/mockData"; // Mock data import karo
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
+import { RESTRAUNT_MENU_API } from "../utils/constants";
 
 const RestrauntMenu = () => {   
     const [resInfo, setResInfo] = useState(null);
@@ -12,8 +13,13 @@ const RestrauntMenu = () => {
     }, []);
 
     const fetchMenu = async () => {
-        // Real API block hone ki wajah se mock data use kar rahe hain
-        setResInfo(MOCK_DATA);
+        const data = await fetch(`https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=29.6873237&lng=76.9792536&restaurantId=726124&catalog_qa=undefined&submitAction=ENTER`)
+
+        const json = await data.json()
+
+        console.log(json);
+        setResInfo(json)
+        
     };
 
     if (resInfo === null) {
