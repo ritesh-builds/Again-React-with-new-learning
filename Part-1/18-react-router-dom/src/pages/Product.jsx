@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import "../style/Product.css";
 
 function Product() {
@@ -40,7 +40,11 @@ function Product() {
         <div className="product-header">
           <div>
             <span>OUR COLLECTION</span>
-
+            <span className="collections">
+              <Link to='/Product/Men'><button>Men</button></Link>
+              <Link to='/Product/Women'><button>Women</button></Link>
+            </span>
+            
             <h1>
               Find your
               <strong> comfort.</strong>
@@ -52,7 +56,6 @@ function Product() {
             everyday comfort with modern style.
           </p>
         </div>
-
         <div className="product-grid">
           {products.map((product) => (
             <div className="product-card" key={product.id}>
@@ -77,8 +80,8 @@ function Product() {
             </div>
           ))}
         </div>
-
       </div>
+      
     </section>
   );
 }

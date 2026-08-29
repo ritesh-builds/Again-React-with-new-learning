@@ -31,7 +31,7 @@ function Contact() {
 
             <div>
               <span>Phone</span>
-              <p>+91 98765 43210</p>
+              <p>+91 98765-43210</p>
             </div>
 
             <div>

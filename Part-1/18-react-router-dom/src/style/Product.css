@@ -167,3 +167,27 @@
     height: 400px;
   }
 }
+
+/* Collections */
+.collections {
+  margin-left: 400px;
+}
+
+.collections button {
+  width: 100px;
+  height: 40px;
+  background-color: #080808;
+  font-size: larger;
+  font-weight: bold;
+  border-radius: 20px;
+  border: 1px solid white;
+  color: aliceblue;
+  transition: all .1s ease;
+  cursor: pointer;
+  margin: 20px;
+}
+
+.collections button:hover {
+  background-color: #fff;
+  color: #080808;
+}

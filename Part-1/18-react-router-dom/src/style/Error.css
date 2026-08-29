@@ -1,0 +1,119 @@
+.error-page {
+  min-height: 100vh;
+  background: #080808;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+}
+
+.error-content {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.error-code {
+  font-size: 100px;
+  letter-spacing: 5px;
+  color: #555;
+}
+
+.error-content h1 {
+  font-size: clamp(4rem, 9vw, 9rem);
+  line-height: 0.85;
+  font-weight: 400;
+  letter-spacing: -6px;
+  margin: 25px 0;
+}
+
+.error-content h1 strong {
+  color: #666;
+  font-weight: 400;
+}
+
+.error-content p {
+  max-width: 420px;
+  margin: 0 auto;
+  color: #777;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.error-btn {
+  display: inline-block;
+  margin-top: 30px;
+
+  padding: 14px 24px;
+
+  border: 1px solid #444;
+  border-radius: 30px;
+
+  color: white;
+  text-decoration: none;
+  font-size: 13px;
+
+  transition: 0.3s ease;
+}
+
+.error-btn:hover {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+.error-shoe {
+  position: absolute;
+  right: 8%;
+  bottom: 8%;
+
+  font-size: 100px;
+  opacity: 0.04;
+
+  transform: rotate(-15deg);
+}
+
+@media (max-width: 600px) {
+  .error-page {
+    padding: 25px;
+  }
+
+  .error-content h1 {
+    letter-spacing: -3px;
+  }
+
+  .error-shoe {
+    font-size: 70px;
+    right: 5%;
+  }
+}
+
+.back-btn {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 20px;
+
+  padding: 14px 24px;
+
+  border: 2px solid #444;
+  border-radius: 30px;
+
+  cursor: pointer;
+
+  color: white;
+  background-color: #080808;
+  text-decoration: none;
+  font-size: 13px;
+
+  transition: 0.3s ease;
+}
+.back-btn:hover {
+  background: white;
+  color: black;
+  border-color: white;
+}
