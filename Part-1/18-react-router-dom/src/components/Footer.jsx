@@ -1,10 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useTheme } from "../context/ThemeContext";
 
 const Footer = () => {
-  return (
-    <footer className="bg-[#080808] text-white px-[8%] pt-[80px] pb-[30px]">
+  const { darkMode } = useTheme();
 
+  return (
+    <footer
+      className={`
+        px-[8%]
+        pt-[80px]
+        pb-[30px]
+        transition-all
+        duration-300
+
+        ${
+          darkMode
+            ? "bg-[#080808] text-white"
+            : "bg-[#f5f5f5] text-black"
+        }
+      `}
+    >
       {/* TOP */}
       <div
         className="
@@ -18,6 +34,7 @@ const Footer = () => {
 
         {/* BRAND */}
         <div>
+
           <h2
             className="
               text-[24px]
@@ -30,17 +47,17 @@ const Footer = () => {
           </h2>
 
           <p
-            className="
-              text-[#777]
-              text-[14px]
-              leading-[1.8]
-              m-0
-            "
+            className={
+              darkMode
+                ? "text-[#777] text-[14px] leading-[1.8] m-0"
+                : "text-[#666] text-[14px] leading-[1.8] m-0"
+            }
           >
             Designed for comfort.
             <br />
             Made for every step.
           </p>
+
         </div>
 
         {/* LINKS */}
@@ -56,130 +73,158 @@ const Footer = () => {
 
           {/* EXPLORE */}
           <div className="flex flex-col gap-[12px]">
+
             <span
-              className="
-                text-[#555]
-                text-[11px]
-                uppercase
-                tracking-[2px]
-                mb-[5px]
-              "
+              className={
+                darkMode
+                  ? "text-[#555] text-[11px] uppercase tracking-[2px] mb-[5px]"
+                  : "text-[#888] text-[11px] uppercase tracking-[2px] mb-[5px]"
+              }
             >
               Explore
             </span>
 
             <Link
               to="/"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               Home
             </Link>
 
             <Link
               to="/products"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               Products
             </Link>
 
             <Link
               to="/about"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               About
             </Link>
 
             <Link
               to="/contact"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               Contact
             </Link>
+
           </div>
 
           {/* FOLLOW */}
           <div className="flex flex-col gap-[12px]">
+
             <span
-              className="
-                text-[#555]
-                text-[11px]
-                uppercase
-                tracking-[2px]
-                mb-[5px]
-              "
+              className={
+                darkMode
+                  ? "text-[#555] text-[11px] uppercase tracking-[2px] mb-[5px]"
+                  : "text-[#888] text-[11px] uppercase tracking-[2px] mb-[5px]"
+              }
             >
               Follow
             </span>
 
             <a
               href="#"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               Instagram
             </a>
 
             <a
               href="#"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               Twitter
             </a>
 
             <a
               href="#"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               Facebook
             </a>
+
           </div>
 
           {/* CONTACT */}
@@ -191,66 +236,90 @@ const Footer = () => {
               max-[650px]:col-span-2
             "
           >
+
             <span
-              className="
-                text-[#555]
-                text-[11px]
-                uppercase
-                tracking-[2px]
-                mb-[5px]
-              "
+              className={
+                darkMode
+                  ? "text-[#555] text-[11px] uppercase tracking-[2px] mb-[5px]"
+                  : "text-[#888] text-[11px] uppercase tracking-[2px] mb-[5px]"
+              }
             >
               Contact
             </span>
 
             <a
               href="mailto:hello@comfortfootwear.com"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               hello@comfortfootwear.com
             </a>
 
             <a
               href="tel:+919876543210"
-              className="
-                text-[#888]
+              className={`
                 no-underline
                 text-[13px]
                 transition-colors
                 duration-300
-                hover:text-white
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#888] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               +91 98765 43210
             </a>
+
           </div>
 
         </div>
       </div>
 
       {/* LINE */}
-      <div className="h-px bg-[#222] my-[50px]" />
+      <div
+        className={`
+          h-px
+          my-[50px]
+          ${
+            darkMode
+              ? "bg-[#222]"
+              : "bg-[#ddd]"
+          }
+        `}
+      />
 
       {/* BOTTOM */}
       <div
-        className="
+        className={`
           flex
           justify-between
           items-center
-          text-[#555]
           text-[11px]
           max-[600px]:flex-col
           max-[600px]:items-start
           max-[600px]:gap-[10px]
-        "
+
+          ${
+            darkMode
+              ? "text-[#555]"
+              : "text-[#888]"
+          }
+        `}
       >
+
         <p className="m-0">
           © 2026 Comfort Footwear. All rights reserved.
         </p>
@@ -258,6 +327,7 @@ const Footer = () => {
         <p className="m-0">
           Made with comfort ♥
         </p>
+
       </div>
 
     </footer>

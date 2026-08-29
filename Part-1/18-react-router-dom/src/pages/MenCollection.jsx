@@ -1,6 +1,9 @@
 import React from "react";
+import { useTheme } from "../context/ThemeContext";
 
 const MenCollection = () => {
+  const { darkMode } = useTheme();
+
   const products = [
     {
       id: 1,
@@ -42,24 +45,31 @@ const MenCollection = () => {
 
   return (
     <section
-      className="
+      className={`
         min-h-screen
-        bg-[#080808]
-        text-white
         px-[8%]
         py-[100px]
+        transition-all
+        duration-300
         max-[650px]:px-[25px]
         max-[650px]:py-[70px]
-      "
+
+        ${
+          darkMode
+            ? "bg-[#080808] text-white"
+            : "bg-[#f5f5f5] text-black"
+        }
+      `}
     >
       {/* HEADER */}
       <div className="max-w-[700px] mb-[70px]">
+
         <span
-          className="
-            text-[11px]
-            tracking-[4px]
-            text-[#666]
-          "
+          className={
+            darkMode
+              ? "text-[11px] tracking-[4px] text-[#666]"
+              : "text-[11px] tracking-[4px] text-[#777]"
+          }
         >
           MEN'S COLLECTION
         </span>
@@ -75,58 +85,73 @@ const MenCollection = () => {
           "
         >
           Made to{" "}
-          <strong className="text-[#666] font-normal">
+          <strong
+            className={
+              darkMode
+                ? "text-[#666] font-normal"
+                : "text-[#888] font-normal"
+            }
+          >
             move.
           </strong>
         </h1>
 
         <p
-          className="
-            max-w-[450px]
-            text-[#777]
-            text-[14px]
-            leading-[1.8]
-          "
+          className={
+            darkMode
+              ? "max-w-[450px] text-[#777] text-[14px] leading-[1.8]"
+              : "max-w-[450px] text-[#666] text-[14px] leading-[1.8]"
+          }
         >
           Explore footwear designed for everyday comfort,
           effortless movement, and modern style.
         </p>
+
       </div>
 
       {/* TOOLBAR */}
       <div
-        className="
+        className={`
           border-t
           border-b
-          border-[#222]
           py-[18px]
           mb-[35px]
           flex
           justify-between
           items-center
-        "
+
+          ${
+            darkMode
+              ? "border-[#222]"
+              : "border-[#ddd]"
+          }
+        `}
       >
         <span
-          className="
-            text-[#555]
-            text-[11px]
-            tracking-[2px]
-          "
+          className={
+            darkMode
+              ? "text-[#555] text-[11px] tracking-[2px]"
+              : "text-[#888] text-[11px] tracking-[2px]"
+          }
         >
           06 PRODUCTS
         </span>
 
         <button
-          className="
+          className={`
             bg-transparent
-            text-[#777]
             border-none
             text-[12px]
             cursor-pointer
             transition-colors
             duration-300
-            hover:text-white
-          "
+
+            ${
+              darkMode
+                ? "text-[#777] hover:text-white"
+                : "text-[#777] hover:text-black"
+            }
+          `}
         >
           Sort by: Featured ↓
         </button>
@@ -145,19 +170,15 @@ const MenCollection = () => {
       >
         {products.map((product) => (
           <div
-            className="
-              cursor-pointer
-              group
-            "
+            className="cursor-pointer group"
             key={product.id}
           >
+
             {/* IMAGE */}
             <div
-              className="
+              className={`
                 h-[420px]
-                bg-[#111]
                 border
-                border-[#1d1d1d]
                 rounded-[12px]
                 relative
                 overflow-hidden
@@ -165,8 +186,15 @@ const MenCollection = () => {
                 items-center
                 justify-center
                 max-[650px]:h-[380px]
-              "
+
+                ${
+                  darkMode
+                    ? "bg-[#111] border-[#1d1d1d]"
+                    : "bg-white border-[#ddd]"
+                }
+              `}
             >
+
               {/* SHOE */}
               <div
                 className="
@@ -185,25 +213,21 @@ const MenCollection = () => {
 
               {/* NUMBER */}
               <span
-                className="
-                  absolute
-                  top-[18px]
-                  left-[18px]
-                  text-[#555]
-                  text-[11px]
-                "
+                className={
+                  darkMode
+                    ? "absolute top-[18px] left-[18px] text-[#555] text-[11px]"
+                    : "absolute top-[18px] left-[18px] text-[#999] text-[11px]"
+                }
               >
                 0{product.id}
               </span>
 
               {/* QUICK VIEW */}
               <button
-                className="
+                className={`
                   absolute
                   bottom-[18px]
                   right-[18px]
-                  bg-white
-                  text-black
                   border-none
                   rounded-[30px]
                   px-[18px]
@@ -216,44 +240,67 @@ const MenCollection = () => {
                   duration-300
                   group-hover:opacity-100
                   group-hover:translate-y-0
-                "
+
+                  ${
+                    darkMode
+                      ? "bg-white text-black"
+                      : "bg-black text-white"
+                  }
+                `}
               >
                 Quick View →
               </button>
+
             </div>
 
             {/* DETAILS */}
             <div
-              className="
+              className={`
                 flex
                 justify-between
                 items-start
                 px-[2px]
                 py-[18px]
                 border-b
-                border-[#222]
-              "
+
+                ${
+                  darkMode
+                    ? "border-[#222]"
+                    : "border-[#ddd]"
+                }
+              `}
             >
+
               <div>
-                <h2
-                  className="
-                    text-[16px]
-                    font-normal
-                    mb-[6px]
-                  "
-                >
+
+                <h2 className="text-[16px] font-normal mb-[6px]">
                   {product.name}
                 </h2>
 
-                <p className="text-[#666] text-[12px]">
+                <p
+                  className={
+                    darkMode
+                      ? "text-[#666] text-[12px]"
+                      : "text-[#888] text-[12px]"
+                  }
+                >
                   {product.category}
                 </p>
+
               </div>
 
-              <span className="text-[#aaa] text-[13px]">
+              <span
+                className={
+                  darkMode
+                    ? "text-[#aaa] text-[13px]"
+                    : "text-[#555] text-[13px]"
+                }
+              >
                 {product.price}
               </span>
+
             </div>
+
           </div>
         ))}
       </div>

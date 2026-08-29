@@ -1,30 +1,44 @@
 import React from "react";
+import { useTheme } from "../context/ThemeContext";
 
 function Contact() {
+  const { darkMode } = useTheme();
+
   return (
     <section
-      className="
+      className={`
         min-h-screen
-        bg-[#080808]
-        text-white
         px-[8%]
         py-[100px]
         flex
         items-center
+        transition-all
+        duration-300
         max-[800px]:px-[25px]
         max-[800px]:py-[70px]
-      "
+
+        ${
+          darkMode
+            ? "bg-[#080808] text-white"
+            : "bg-[#f5f5f5] text-black"
+        }
+      `}
     >
       <div className="w-full max-w-[1250px] mx-auto">
 
         {/* HEADING */}
         <div className="mb-[70px]">
+
           <span
-            className="
+            className={`
               text-[12px]
               tracking-[4px]
-              text-[#777]
-            "
+              ${
+                darkMode
+                  ? "text-[#777]"
+                  : "text-[#777]"
+              }
+            `}
           >
             GET IN TOUCH
           </span>
@@ -41,22 +55,37 @@ function Contact() {
           >
             Let's talk
             <br />
-            <strong className="text-[#666] font-normal">
+
+            <strong
+              className={`
+                font-normal
+                ${
+                  darkMode
+                    ? "text-[#666]"
+                    : "text-[#888]"
+                }
+              `}
+            >
               footwear.
             </strong>
           </h1>
 
           <p
-            className="
+            className={`
               max-w-[480px]
-              text-[#888]
               leading-[1.7]
               text-[15px]
-            "
+              ${
+                darkMode
+                  ? "text-[#888]"
+                  : "text-[#666]"
+              }
+            `}
           >
             Have a question, suggestion, or just want to say hello?
             We'd love to hear from you.
           </p>
+
         </div>
 
         {/* CONTENT */}
@@ -75,57 +104,99 @@ function Contact() {
 
             <div>
               <span
-                className="
+                className={`
                   block
-                  text-[#555]
                   text-[12px]
                   uppercase
                   tracking-[2px]
                   mb-[8px]
-                "
+                  ${
+                    darkMode
+                      ? "text-[#555]"
+                      : "text-[#888]"
+                  }
+                `}
               >
                 Email
               </span>
 
-              <p className="m-0 text-[#ccc] text-[14px]">
+              <p
+                className={`
+                  m-0
+                  text-[14px]
+                  ${
+                    darkMode
+                      ? "text-[#ccc]"
+                      : "text-[#333]"
+                  }
+                `}
+              >
                 hello@comfortfootwear.com
               </p>
             </div>
 
             <div>
               <span
-                className="
+                className={`
                   block
-                  text-[#555]
                   text-[12px]
                   uppercase
                   tracking-[2px]
                   mb-[8px]
-                "
+                  ${
+                    darkMode
+                      ? "text-[#555]"
+                      : "text-[#888]"
+                  }
+                `}
               >
                 Phone
               </span>
 
-              <p className="m-0 text-[#ccc] text-[14px]">
+              <p
+                className={`
+                  m-0
+                  text-[14px]
+                  ${
+                    darkMode
+                      ? "text-[#ccc]"
+                      : "text-[#333]"
+                  }
+                `}
+              >
                 +91 98765-43210
               </p>
             </div>
 
             <div>
               <span
-                className="
+                className={`
                   block
-                  text-[#555]
                   text-[12px]
                   uppercase
                   tracking-[2px]
                   mb-[8px]
-                "
+                  ${
+                    darkMode
+                      ? "text-[#555]"
+                      : "text-[#888]"
+                  }
+                `}
               >
                 Location
               </span>
 
-              <p className="m-0 text-[#ccc] text-[14px]">
+              <p
+                className={`
+                  m-0
+                  text-[14px]
+                  ${
+                    darkMode
+                      ? "text-[#ccc]"
+                      : "text-[#333]"
+                  }
+                `}
+              >
                 New Delhi, India
               </p>
             </div>
@@ -144,16 +215,14 @@ function Contact() {
                 max-[800px]:grid-cols-1
               "
             >
+
               <input
                 type="text"
                 placeholder="Your Name"
-                className="
+                className={`
                   w-full
                   box-border
-                  bg-[#0e0e0e]
                   border
-                  border-[#222]
-                  text-white
                   px-[18px]
                   py-[17px]
                   text-[14px]
@@ -162,22 +231,36 @@ function Contact() {
                   transition-all
                   duration-300
                   font-inherit
-                  placeholder:text-[#555]
-                  focus:border-[#555]
-                  focus:bg-[#111]
-                "
+
+                  ${
+                    darkMode
+                      ? `
+                        bg-[#0e0e0e]
+                        border-[#222]
+                        text-white
+                        placeholder:text-[#555]
+                        focus:border-[#555]
+                        focus:bg-[#111]
+                      `
+                      : `
+                        bg-white
+                        border-[#ddd]
+                        text-black
+                        placeholder:text-[#999]
+                        focus:border-[#999]
+                        focus:bg-[#fafafa]
+                      `
+                  }
+                `}
               />
 
               <input
                 type="email"
                 placeholder="Your Email"
-                className="
+                className={`
                   w-full
                   box-border
-                  bg-[#0e0e0e]
                   border
-                  border-[#222]
-                  text-white
                   px-[18px]
                   py-[17px]
                   text-[14px]
@@ -186,24 +269,39 @@ function Contact() {
                   transition-all
                   duration-300
                   font-inherit
-                  placeholder:text-[#555]
-                  focus:border-[#555]
-                  focus:bg-[#111]
-                "
+
+                  ${
+                    darkMode
+                      ? `
+                        bg-[#0e0e0e]
+                        border-[#222]
+                        text-white
+                        placeholder:text-[#555]
+                        focus:border-[#555]
+                        focus:bg-[#111]
+                      `
+                      : `
+                        bg-white
+                        border-[#ddd]
+                        text-black
+                        placeholder:text-[#999]
+                        focus:border-[#999]
+                        focus:bg-[#fafafa]
+                      `
+                  }
+                `}
               />
+
             </div>
 
             {/* SUBJECT */}
             <input
               type="text"
               placeholder="Subject"
-              className="
+              className={`
                 w-full
                 box-border
-                bg-[#0e0e0e]
                 border
-                border-[#222]
-                text-white
                 px-[18px]
                 py-[17px]
                 text-[14px]
@@ -212,23 +310,37 @@ function Contact() {
                 transition-all
                 duration-300
                 font-inherit
-                placeholder:text-[#555]
-                focus:border-[#555]
-                focus:bg-[#111]
-              "
+
+                ${
+                  darkMode
+                    ? `
+                      bg-[#0e0e0e]
+                      border-[#222]
+                      text-white
+                      placeholder:text-[#555]
+                      focus:border-[#555]
+                      focus:bg-[#111]
+                    `
+                    : `
+                      bg-white
+                      border-[#ddd]
+                      text-black
+                      placeholder:text-[#999]
+                      focus:border-[#999]
+                      focus:bg-[#fafafa]
+                    `
+                }
+              `}
             />
 
             {/* MESSAGE */}
             <textarea
               placeholder="Tell us something..."
               rows="5"
-              className="
+              className={`
                 w-full
                 box-border
-                bg-[#0e0e0e]
                 border
-                border-[#222]
-                text-white
                 px-[18px]
                 py-[17px]
                 text-[14px]
@@ -238,38 +350,68 @@ function Contact() {
                 duration-300
                 font-inherit
                 resize-y
-                placeholder:text-[#555]
-                focus:border-[#555]
-                focus:bg-[#111]
-              "
+
+                ${
+                  darkMode
+                    ? `
+                      bg-[#0e0e0e]
+                      border-[#222]
+                      text-white
+                      placeholder:text-[#555]
+                      focus:border-[#555]
+                      focus:bg-[#111]
+                    `
+                    : `
+                      bg-white
+                      border-[#ddd]
+                      text-black
+                      placeholder:text-[#999]
+                      focus:border-[#999]
+                      focus:bg-[#fafafa]
+                    `
+                }
+              `}
             ></textarea>
 
             {/* BUTTON */}
             <button
               type="submit"
-              className="
+              className={`
                 self-start
                 px-[25px]
                 py-[15px]
                 border
-                border-[#444]
                 rounded-[30px]
-                bg-white
-                text-black
                 text-[14px]
                 cursor-pointer
                 transition-all
                 duration-300
-                hover:bg-transparent
-                hover:text-white
-                hover:border-[#666]
-              "
+
+                ${
+                  darkMode
+                    ? `
+                      border-white
+                      bg-white
+                      text-black
+                      hover:bg-transparent
+                      hover:text-white
+                      hover:border-[#666]
+                    `
+                    : `
+                      border-black
+                      bg-black
+                      text-white
+                      hover:bg-transparent
+                      hover:text-black
+                      hover:border-black
+                    `
+                }
+              `}
             >
               Send Message →
             </button>
 
           </form>
-
         </div>
       </div>
     </section>

@@ -1,21 +1,29 @@
 import React, { useState } from "react";
+import { useTheme } from "../context/ThemeContext";
 
 function Login() {
   const [isSignup, setIsSignup] = useState(false);
+  const { darkMode } = useTheme();
 
   return (
     <section
-      className="
+      className={`
         min-h-screen
-        bg-[#080808]
-        text-white
         px-[8%]
         py-[80px]
         flex
         items-center
+        transition-all
+        duration-300
         max-[850px]:px-[25px]
         max-[850px]:py-[60px]
-      "
+
+        ${
+          darkMode
+            ? "bg-[#080808] text-white"
+            : "bg-[#f5f5f5] text-black"
+        }
+      `}
     >
       <div
         className="
@@ -30,15 +38,19 @@ function Login() {
           max-[850px]:gap-[50px]
         "
       >
-
         {/* BRAND */}
         <div>
+
           <span
-            className="
+            className={`
               text-[11px]
               tracking-[5px]
-              text-[#666]
-            "
+              ${
+                darkMode
+                  ? "text-[#666]"
+                  : "text-[#777]"
+              }
+            `}
           >
             COMFORT FOOTWEAR
           </span>
@@ -57,51 +69,77 @@ function Login() {
           >
             Step into
             <br />
-            <strong className="text-[#666] font-normal">
+
+            <strong
+              className={`
+                font-normal
+                ${
+                  darkMode
+                    ? "text-[#666]"
+                    : "text-[#888]"
+                }
+              `}
+            >
               comfort.
             </strong>
           </h1>
 
           <p
-            className="
+            className={`
               max-w-[430px]
-              text-[#777]
               text-[14px]
               leading-[1.8]
-            "
+              ${
+                darkMode
+                  ? "text-[#777]"
+                  : "text-[#666]"
+              }
+            `}
           >
             Your comfort is just one step away.
             Sign in to continue your journey with us.
           </p>
+
         </div>
 
         {/* AUTH BOX */}
         <div
-          className="
-            bg-[#0d0d0d]
+          className={`
             border
-            border-[#222]
             rounded-[16px]
             p-[35px]
+            transition-all
+            duration-300
             max-[850px]:max-w-[500px]
             max-[850px]:w-full
             max-[850px]:mx-auto
-          "
+
+            ${
+              darkMode
+                ? "bg-[#0d0d0d] border-[#222]"
+                : "bg-white border-[#ddd]"
+            }
+          `}
         >
 
           {/* TABS */}
           <div
-            className="
+            className={`
               grid
               grid-cols-2
               gap-[5px]
-              bg-[#080808]
               border
-              border-[#1d1d1d]
               p-[5px]
               rounded-[8px]
-            "
+
+              ${
+                darkMode
+                  ? "bg-[#080808] border-[#1d1d1d]"
+                  : "bg-[#f5f5f5] border-[#ddd]"
+              }
+            `}
           >
+
             <button
               className={`
                 border-none
@@ -111,10 +149,15 @@ function Login() {
                 text-[13px]
                 transition-all
                 duration-300
+
                 ${
                   !isSignup
-                    ? "bg-[#1a1a1a] text-white"
-                    : "bg-transparent text-[#666]"
+                    ? darkMode
+                      ? "bg-[#1a1a1a] text-white"
+                      : "bg-white text-black"
+                    : darkMode
+                      ? "bg-transparent text-[#666]"
+                      : "bg-transparent text-[#888]"
                 }
               `}
               onClick={() => setIsSignup(false)}
@@ -131,41 +174,60 @@ function Login() {
                 text-[13px]
                 transition-all
                 duration-300
+
                 ${
                   isSignup
-                    ? "bg-[#1a1a1a] text-white"
-                    : "bg-transparent text-[#666]"
+                    ? darkMode
+                      ? "bg-[#1a1a1a] text-white"
+                      : "bg-white text-black"
+                    : darkMode
+                      ? "bg-transparent text-[#666]"
+                      : "bg-transparent text-[#888]"
                 }
               `}
               onClick={() => setIsSignup(true)}
             >
               Sign Up
             </button>
+
           </div>
 
           {/* HEADING */}
           <div className="mt-[35px] mb-[28px]">
+
             <h2 className="text-[25px] font-normal mb-[8px]">
               {isSignup ? "Create account" : "Welcome back"}
             </h2>
 
-            <p className="text-[#666] text-[13px]">
+            <p
+              className={
+                darkMode
+                  ? "text-[#666] text-[13px]"
+                  : "text-[#777] text-[13px]"
+              }
+            >
               {isSignup
                 ? "Create your account to get started."
                 : "Enter your details to continue."}
             </p>
+
           </div>
 
           {/* FULL NAME */}
           {isSignup && (
             <div className="mb-[18px]">
+
               <label
-                className="
+                className={`
                   block
-                  text-[#888]
                   text-[12px]
                   mb-[8px]
-                "
+                  ${
+                    darkMode
+                      ? "text-[#888]"
+                      : "text-[#666]"
+                  }
+                `}
               >
                 Full Name
               </label>
@@ -173,37 +235,56 @@ function Login() {
               <input
                 type="text"
                 placeholder="Enter your name"
-                className="
+                className={`
                   w-full
                   box-border
-                  py-[14px]
-                  px-[15px]
-                  bg-[#080808]
                   border
-                  border-[#242424]
                   rounded-[7px]
                   outline-none
-                  text-white
                   text-[13px]
                   font-inherit
+                  py-[14px]
+                  px-[15px]
                   transition-all
                   duration-300
-                  placeholder:text-[#444]
-                  focus:border-[#555]
-                "
+
+                  ${
+                    darkMode
+                      ? `
+                        bg-[#080808]
+                        border-[#242424]
+                        text-white
+                        placeholder:text-[#444]
+                        focus:border-[#555]
+                      `
+                      : `
+                        bg-[#f8f8f8]
+                        border-[#ddd]
+                        text-black
+                        placeholder:text-[#999]
+                        focus:border-[#999]
+                      `
+                  }
+                `}
               />
+
             </div>
           )}
 
           {/* EMAIL */}
           <div className="mb-[18px]">
+
             <label
-              className="
+              className={`
                 block
-                text-[#888]
                 text-[12px]
                 mb-[8px]
-              "
+                ${
+                  darkMode
+                    ? "text-[#888]"
+                    : "text-[#666]"
+                }
+              `}
             >
               Email
             </label>
@@ -211,36 +292,55 @@ function Login() {
             <input
               type="email"
               placeholder="you@example.com"
-              className="
+              className={`
                 w-full
                 box-border
-                py-[14px]
-                px-[15px]
-                bg-[#080808]
                 border
-                border-[#242424]
                 rounded-[7px]
                 outline-none
-                text-white
                 text-[13px]
                 font-inherit
+                py-[14px]
+                px-[15px]
                 transition-all
                 duration-300
-                placeholder:text-[#444]
-                focus:border-[#555]
-              "
+
+                ${
+                  darkMode
+                    ? `
+                      bg-[#080808]
+                      border-[#242424]
+                      text-white
+                      placeholder:text-[#444]
+                      focus:border-[#555]
+                    `
+                    : `
+                      bg-[#f8f8f8]
+                      border-[#ddd]
+                      text-black
+                      placeholder:text-[#999]
+                      focus:border-[#999]
+                    `
+                }
+              `}
             />
+
           </div>
 
           {/* PASSWORD */}
           <div className="mb-[18px]">
+
             <label
-              className="
+              className={`
                 block
-                text-[#888]
                 text-[12px]
                 mb-[8px]
-              "
+                ${
+                  darkMode
+                    ? "text-[#888]"
+                    : "text-[#666]"
+                }
+              `}
             >
               Password
             </label>
@@ -248,37 +348,56 @@ function Login() {
             <input
               type="password"
               placeholder="••••••••"
-              className="
+              className={`
                 w-full
                 box-border
-                py-[14px]
-                px-[15px]
-                bg-[#080808]
                 border
-                border-[#242424]
                 rounded-[7px]
                 outline-none
-                text-white
                 text-[13px]
                 font-inherit
+                py-[14px]
+                px-[15px]
                 transition-all
                 duration-300
-                placeholder:text-[#444]
-                focus:border-[#555]
-              "
+
+                ${
+                  darkMode
+                    ? `
+                      bg-[#080808]
+                      border-[#242424]
+                      text-white
+                      placeholder:text-[#444]
+                      focus:border-[#555]
+                    `
+                    : `
+                      bg-[#f8f8f8]
+                      border-[#ddd]
+                      text-black
+                      placeholder:text-[#999]
+                      focus:border-[#999]
+                    `
+                }
+              `}
             />
+
           </div>
 
           {/* CONFIRM PASSWORD */}
           {isSignup && (
             <div className="mb-[18px]">
+
               <label
-                className="
+                className={`
                   block
-                  text-[#888]
                   text-[12px]
                   mb-[8px]
-                "
+                  ${
+                    darkMode
+                      ? "text-[#888]"
+                      : "text-[#666]"
+                  }
+                `}
               >
                 Confirm Password
               </label>
@@ -286,80 +405,117 @@ function Login() {
               <input
                 type="password"
                 placeholder="••••••••"
-                className="
+                className={`
                   w-full
                   box-border
-                  py-[14px]
-                  px-[15px]
-                  bg-[#080808]
                   border
-                  border-[#242424]
                   rounded-[7px]
                   outline-none
-                  text-white
                   text-[13px]
                   font-inherit
+                  py-[14px]
+                  px-[15px]
                   transition-all
                   duration-300
-                  placeholder:text-[#444]
-                  focus:border-[#555]
-                "
+
+                  ${
+                    darkMode
+                      ? `
+                        bg-[#080808]
+                        border-[#242424]
+                        text-white
+                        placeholder:text-[#444]
+                        focus:border-[#555]
+                      `
+                      : `
+                        bg-[#f8f8f8]
+                        border-[#ddd]
+                        text-black
+                        placeholder:text-[#999]
+                        focus:border-[#999]
+                      `
+                  }
+                `}
               />
+
             </div>
           )}
 
           {/* FORGOT PASSWORD */}
           {!isSignup && (
             <div className="text-right mt-[-5px] mb-[20px]">
+
               <button
-                className="
+                className={`
                   border-none
                   bg-transparent
-                  text-[#777]
                   cursor-pointer
                   text-[12px]
-                  hover:text-white
                   transition-colors
                   duration-300
-                "
+                  ${
+                    darkMode
+                      ? "text-[#777] hover:text-white"
+                      : "text-[#777] hover:text-black"
+                  }
+                `}
               >
                 Forgot password?
               </button>
+
             </div>
           )}
 
           {/* SUBMIT */}
           <button
-            className="
+            className={`
               w-full
               py-[15px]
               border
-              border-white
               rounded-[8px]
-              bg-white
-              text-black
               cursor-pointer
               text-[13px]
               transition-all
               duration-300
-              hover:bg-transparent
-              hover:text-white
-            "
+
+              ${
+                darkMode
+                  ? `
+                    border-white
+                    bg-white
+                    text-black
+                    hover:bg-transparent
+                    hover:text-white
+                  `
+                  : `
+                    border-black
+                    bg-black
+                    text-white
+                    hover:bg-transparent
+                    hover:text-black
+                  `
+              }
+            `}
           >
             {isSignup ? "Create Account →" : "Login →"}
           </button>
 
           {/* SWITCH */}
           <div
-            className="
+            className={`
               flex
               justify-center
               gap-[5px]
               mt-[25px]
               text-[12px]
-              text-[#555]
-            "
+              ${
+                darkMode
+                  ? "text-[#555]"
+                  : "text-[#888]"
+              }
+            `}
           >
+
             <span>
               {isSignup
                 ? "Already have an account?"
@@ -368,18 +524,23 @@ function Login() {
 
             <button
               onClick={() => setIsSignup(!isSignup)}
-              className="
+              className={`
                 border-none
                 bg-transparent
-                text-[#aaa]
                 cursor-pointer
-                hover:text-white
                 transition-colors
                 duration-300
-              "
+
+                ${
+                  darkMode
+                    ? "text-[#aaa] hover:text-white"
+                    : "text-[#666] hover:text-black"
+                }
+              `}
             >
               {isSignup ? "Login" : "Sign Up"}
             </button>
+
           </div>
 
         </div>
