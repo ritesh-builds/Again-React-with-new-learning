@@ -1,8 +1,6 @@
 import React from "react";
-import "../style/MenCollection.css";
 
 const MenCollection = () => {
-	
   const products = [
     {
       id: 1,
@@ -43,60 +41,222 @@ const MenCollection = () => {
   ];
 
   return (
-    <section className="men-collection">
+    <section
+      className="
+        min-h-screen
+        bg-[#080808]
+        text-white
+        px-[8%]
+        py-[100px]
+        max-[650px]:px-[25px]
+        max-[650px]:py-[70px]
+      "
+    >
+      {/* HEADER */}
+      <div className="max-w-[700px] mb-[70px]">
+        <span
+          className="
+            text-[11px]
+            tracking-[4px]
+            text-[#666]
+          "
+        >
+          MEN'S COLLECTION
+        </span>
 
-      <div className="men-header">
-        <span>MEN'S COLLECTION</span>
-
-        <h1>
-          Made to <strong>move.</strong>
+        <h1
+          className="
+            text-[clamp(4rem,8vw,8rem)]
+            leading-[0.85]
+            font-normal
+            tracking-[-6px]
+            my-[25px]
+            max-[650px]:tracking-[-3px]
+          "
+        >
+          Made to{" "}
+          <strong className="text-[#666] font-normal">
+            move.
+          </strong>
         </h1>
 
-        <p>
+        <p
+          className="
+            max-w-[450px]
+            text-[#777]
+            text-[14px]
+            leading-[1.8]
+          "
+        >
           Explore footwear designed for everyday comfort,
           effortless movement, and modern style.
         </p>
       </div>
 
-      <div className="men-toolbar">
-        <span>06 PRODUCTS</span>
+      {/* TOOLBAR */}
+      <div
+        className="
+          border-t
+          border-b
+          border-[#222]
+          py-[18px]
+          mb-[35px]
+          flex
+          justify-between
+          items-center
+        "
+      >
+        <span
+          className="
+            text-[#555]
+            text-[11px]
+            tracking-[2px]
+          "
+        >
+          06 PRODUCTS
+        </span>
 
-        <button>
+        <button
+          className="
+            bg-transparent
+            text-[#777]
+            border-none
+            text-[12px]
+            cursor-pointer
+            transition-colors
+            duration-300
+            hover:text-white
+          "
+        >
           Sort by: Featured ↓
         </button>
       </div>
 
-      <div className="men-grid">
+      {/* PRODUCT GRID */}
+      <div
+        className="
+          grid
+          grid-cols-3
+          gap-x-[20px]
+          gap-y-[45px]
+          max-[1000px]:grid-cols-2
+          max-[650px]:grid-cols-1
+        "
+      >
         {products.map((product) => (
-          <div className="men-card" key={product.id}>
-
-            <div className="men-image">
-              <div className="shoe-placeholder">
+          <div
+            className="
+              cursor-pointer
+              group
+            "
+            key={product.id}
+          >
+            {/* IMAGE */}
+            <div
+              className="
+                h-[420px]
+                bg-[#111]
+                border
+                border-[#1d1d1d]
+                rounded-[12px]
+                relative
+                overflow-hidden
+                flex
+                items-center
+                justify-center
+                max-[650px]:h-[380px]
+              "
+            >
+              {/* SHOE */}
+              <div
+                className="
+                  text-[110px]
+                  grayscale
+                  opacity-80
+                  rotate-[-12deg]
+                  transition-transform
+                  duration-500
+                  ease-in-out
+                  group-hover:scale-[1.12]
+                "
+              >
                 👟
               </div>
 
-              <span className="product-number">
+              {/* NUMBER */}
+              <span
+                className="
+                  absolute
+                  top-[18px]
+                  left-[18px]
+                  text-[#555]
+                  text-[11px]
+                "
+              >
                 0{product.id}
               </span>
 
-              <button className="quick-view">
+              {/* QUICK VIEW */}
+              <button
+                className="
+                  absolute
+                  bottom-[18px]
+                  right-[18px]
+                  bg-white
+                  text-black
+                  border-none
+                  rounded-[30px]
+                  px-[18px]
+                  py-[11px]
+                  text-[12px]
+                  cursor-pointer
+                  opacity-0
+                  translate-y-[10px]
+                  transition-all
+                  duration-300
+                  group-hover:opacity-100
+                  group-hover:translate-y-0
+                "
+              >
                 Quick View →
               </button>
             </div>
 
-            <div className="men-details">
+            {/* DETAILS */}
+            <div
+              className="
+                flex
+                justify-between
+                items-start
+                px-[2px]
+                py-[18px]
+                border-b
+                border-[#222]
+              "
+            >
               <div>
-                <h2>{product.name}</h2>
-                <p>{product.category}</p>
+                <h2
+                  className="
+                    text-[16px]
+                    font-normal
+                    mb-[6px]
+                  "
+                >
+                  {product.name}
+                </h2>
+
+                <p className="text-[#666] text-[12px]">
+                  {product.category}
+                </p>
               </div>
 
-              <span>{product.price}</span>
+              <span className="text-[#aaa] text-[13px]">
+                {product.price}
+              </span>
             </div>
-
           </div>
         ))}
       </div>
-
     </section>
   );
 };
