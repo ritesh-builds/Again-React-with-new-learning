@@ -1,16 +1,73 @@
-# React + Vite
+# Comfort Footwear 👟
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A modern footwear e-commerce frontend built with React and Tailwind CSS.
 
-Currently, two official plugins are available:
+Comfort Footwear focuses on providing a clean, minimal and responsive shopping experience with separate collections for men and women, authentication UI, contact page, and a global dark/light theme.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🏠 Modern landing page
+- 🛍️ Product collection page
+- 👨 Men's footwear collection
+- 👩 Women's footwear collection
+- 🔐 Login / Sign Up interface
+- 📩 Contact form UI
+- ❌ Custom 404 error page
+- 🌓 Dark / Light mode
+- 📱 Responsive design for mobile, tablet and desktop
+- ⚡ Client-side routing with React Router
+- 🎨 Tailwind CSS based styling
+- 🔄 Global theme state using React Context API
+- ✨ Hover effects and smooth UI transitions
 
-## Expanding the Oxlint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+## 🛠️ Tech Stack
+
+### Frontend
+
+- React
+- JavaScript
+- React Router DOM
+- Tailwind CSS
+- Context API
+
+### Styling
+
+- Tailwind CSS
+- Responsive utility classes
+- CSS transitions and hover effects
+
+### Images
+
+- Unsplash
+
+---
+
+## 📂 Project Structure
+
+```text
+src/
+│
+├── components/
+│   ├── Navbar.jsx
+│   └── Footer.jsx
+│
+├── context/
+│   └── ThemeContext.jsx
+│
+├── pages/
+│   ├── Home.jsx
+│   ├── About.jsx
+│   ├── Contact.jsx
+│   ├── Product.jsx
+│   ├── MenCollection.jsx
+│   ├── WomenCollection.jsx
+│   ├── Login.jsx
+│   └── Error.jsx
+│
+├── App.jsx
+├── main.jsx
+└── index.css

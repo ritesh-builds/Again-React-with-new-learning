@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useTheme } from "../context/ThemeContext";
 
 function Navbar() {
@@ -7,18 +7,8 @@ function Navbar() {
 
   return (
     <nav
-      className={`
-        w-full
-        flex
-        items-center
-        justify-between
-        px-[40px]
-        py-[20px]
-        relative
-        z-[100]
-        border-b
-        transition-all
-        duration-300
+      className={
+        `w-full flex items-center justify-between px-[40px] py-[20px] relative z-100 border-b transition-all duration-300
 
         ${
           darkMode
@@ -30,7 +20,7 @@ function Navbar() {
       {/* LOGO */}
       <Link
         to="/"
-        className={`
+        className={ `
           no-underline
           ${
             darkMode
@@ -54,9 +44,18 @@ function Navbar() {
       {/* NAV LINKS */}
       <div className="flex items-center gap-[40px]">
 
-        <Link
+        <NavLink
           to="/"
-          className={`
+          className={({ isActive }) => `
+            ${
+              darkMode
+                ? isActive
+                  ? "text-white"
+                  : "text-[#888] hover:text-white"
+                : isActive
+                  ? "text-black"
+                  : "text-[#666] hover:text-black"
+            }
             no-underline
             text-[17px]
             transition-colors
@@ -69,11 +68,19 @@ function Navbar() {
           `}
         >
           Home
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/About"
-          className={`
+          className={({isActive}) => 
+            `
+          ${ darkMode ? isActive
+                ? "text-white"
+                : "text-[#888] hover:text-white"
+              : isActive
+                ? "text-black"
+                : "text-[#666] hover:text-black"
+          }
             no-underline
             text-[17px]
             transition-colors
@@ -83,14 +90,25 @@ function Navbar() {
                 ? "text-[#888] hover:text-white"
                 : "text-[#666] hover:text-black"
             }
-          `}
+          `
+          }
         >
           About
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/Contact"
-          className={`
+          className={({isActive}) => 
+            `
+            ${
+              darkMode
+                ? isActive
+                  ? "text-white"
+                  : "text-[#888] hover:text-white"
+                : isActive
+                  ? "text-black"
+                  : "text-[#666] hover:text-black"
+            }
             no-underline
             text-[17px]
             transition-colors
@@ -100,14 +118,24 @@ function Navbar() {
                 ? "text-[#888] hover:text-white"
                 : "text-[#666] hover:text-black"
             }
-          `}
+          `
+          }
         >
           Contact
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/Product"
-          className={`
+          className={(({isActive}) => 
+          ` 
+          ${darkMode
+            ? isActive
+              ? "text-white"
+              : "text-[#888] hover:text-white"
+            : isActive
+              ? "text-black"
+              : "text-[#666] hover:text-black"
+          }
             no-underline
             text-[17px]
             transition-colors
@@ -117,10 +145,11 @@ function Navbar() {
                 ? "text-[#888] hover:text-white"
                 : "text-[#666] hover:text-black"
             }
-          `}
+          `
+          )}
         >
           Product
-        </Link>
+        </NavLink>
 
       </div>
 
@@ -181,3 +210,156 @@ function Navbar() {
 }
 
 export default Navbar;
+
+
+
+
+
+// import React from "react";
+// import { Link, NavLink } from "react-router-dom";
+// import { useTheme } from "../context/ThemeContext";
+
+// function Navbar() {
+//   const { darkMode, toggleTheme } = useTheme();
+
+//   const navLinkStyle = ({ isActive }) => `
+//     no-underline
+//     text-[17px]
+//     transition-colors
+//     duration-300
+//     ${
+//       darkMode
+//         ? isActive
+//           ? "text-white"
+//           : "text-[#888] hover:text-white"
+//         : isActive
+//           ? "text-black"
+//           : "text-[#666] hover:text-black"
+//     }
+//   `;
+
+//   return (
+//     <nav
+//       className={`
+//         w-full
+//         flex
+//         items-center
+//         justify-between
+//         px-[40px]
+//         py-[20px]
+//         relative
+//         z-100
+//         border-b
+//         transition-all
+//         duration-300
+
+//         ${
+//           darkMode
+//             ? "bg-[#080808] border-[#1f1f1f]"
+//             : "bg-[#f5f5f5] border-[#dddddd]"
+//         }
+//       `}
+//     >
+
+//       {/* LOGO */}
+//       <Link
+//         to="/"
+//         className={`
+//           no-underline
+//           ${darkMode ? "text-white" : "text-black"}
+//         `}
+//       >
+//         <h3
+//           className="
+//             text-[20px]
+//             font-medium
+//             tracking-[-1px]
+//             m-0
+//           "
+//         >
+//           Comfort Footwear
+//         </h3>
+//       </Link>
+
+
+//       {/* NAV LINKS */}
+//       <div className="flex items-center gap-[40px]">
+
+//         <NavLink to="/" className={navLinkStyle}>
+//           Home
+//         </NavLink>
+
+//         <NavLink to="/About" className={navLinkStyle}>
+//           About
+//         </NavLink>
+
+//         <NavLink to="/Contact" className={navLinkStyle}>
+//           Contact
+//         </NavLink>
+
+//         <NavLink to="/Product" className={navLinkStyle}>
+//           Product
+//         </NavLink>
+
+//       </div>
+
+
+//       {/* RIGHT SIDE */}
+//       <div className="flex items-center gap-[15px]">
+
+//         {/* THEME BUTTON */}
+//         <button
+//           onClick={toggleTheme}
+//           className={`
+//             w-[40px]
+//             h-[40px]
+//             rounded-full
+//             cursor-pointer
+//             text-[18px]
+//             flex
+//             items-center
+//             justify-center
+//             transition-all
+//             duration-300
+
+//             ${
+//               darkMode
+//                 ? "bg-[#111] border border-[#333]"
+//                 : "bg-white border border-[#ccc]"
+//             }
+//           `}
+//         >
+//           {darkMode ? "☀️" : "🌙"}
+//         </button>
+
+
+//         {/* LOGIN */}
+//         <Link
+//           to="/login"
+//           className={`
+//             px-[20px]
+//             py-[10px]
+//             rounded-[25px]
+//             border
+//             no-underline
+//             text-[14px]
+//             transition-all
+//             duration-300
+
+//             ${
+//               darkMode
+//                 ? "border-[#444] text-white hover:bg-white hover:text-black hover:border-white"
+//                 : "border-[#bbb] text-black hover:bg-black hover:text-white hover:border-black"
+//             }
+//           `}
+//         >
+//           Login / Sign Up
+//         </Link>
+
+//       </div>
+
+//     </nav>
+//   );
+// }
+
+// export default Navbar;
