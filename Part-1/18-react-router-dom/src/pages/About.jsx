@@ -9,13 +9,13 @@ function About() {
       className={`
         min-h-screen
         px-[8%]
-        py-[100px]
+        py-25
         flex
         items-center
         transition-all
         duration-300
-        max-[800px]:px-[25px]
-        max-[800px]:py-[70px]
+        max-[800px]:px-6.25
+        max-[800px]:py-17.5
 
         ${
           darkMode
@@ -27,25 +27,25 @@ function About() {
       <div
         className="
           w-full
-          max-w-[1250px]
+          max-w-312.5
           mx-auto
           grid
           grid-cols-[1.2fr_0.8fr]
-          gap-[100px]
+          gap-25
           items-center
           max-[800px]:grid-cols-1
-          max-[800px]:gap-[60px]
+          max-[800px]:gap-15
         "
       >
         {/* LEFT SIDE */}
-        <div className="max-w-[650px]">
+        <div className="max-w-162.5">
 
           <span
             className={`
               inline-block
               text-[12px]
               tracking-[4px]
-              mb-[25px]
+              mb-6.25
               ${
                 darkMode
                   ? "text-[#888]"
@@ -63,7 +63,7 @@ function About() {
               font-medium
               tracking-[-4px]
               m-0
-              mb-[35px]
+              mb-8.75
               max-[800px]:tracking-[-2px]
             "
           >
@@ -83,8 +83,8 @@ function About() {
             className={`
               text-[16px]
               leading-[1.8]
-              max-w-[580px]
-              mb-[18px]
+              max-w-145
+              mb-4.5
               ${
                 darkMode
                   ? "text-[#999]"
@@ -101,8 +101,8 @@ function About() {
             className={`
               text-[16px]
               leading-[1.8]
-              max-w-[580px]
-              mb-[18px]
+              max-w-145
+              mb-4.5
               ${
                 darkMode
                   ? "text-[#999]"
@@ -117,9 +117,9 @@ function About() {
           {/* BUTTON */}
           <button
             className={`
-              mt-[20px]
-              px-[24px]
-              py-[14px]
+              mt-5
+              px-6
+              py-3.5
               rounded-[30px]
               cursor-pointer
               text-[14px]
@@ -153,17 +153,17 @@ function About() {
         </div>
 
         {/* RIGHT SIDE */}
-        <div className="flex flex-col gap-[18px]">
+        <div className="flex flex-col gap-4.5">
 
           {/* CARD 01 */}
           <div
             className={`
-              p-[28px]
+              p-7
               border
               rounded-[14px]
               transition-all
               duration-300
-              hover:-translate-x-[8px]
+              hover:-translate-x-2
 
               ${
                 darkMode
@@ -187,7 +187,7 @@ function About() {
                 text-[13px]
                 font-normal
                 m-0
-                mb-[20px]
+                mb-5
                 ${
                   darkMode
                     ? "text-[#666]"
@@ -198,7 +198,7 @@ function About() {
               01
             </h2>
 
-            <h3 className="text-[20px] font-medium m-0 mb-[10px]">
+            <h3 className="text-[20px] font-medium m-0 mb-2.5">
               Designed for Comfort
             </h3>
 
@@ -221,12 +221,12 @@ function About() {
           {/* CARD 02 */}
           <div
             className={`
-              p-[28px]
+              p-7
               border
               rounded-[14px]
               transition-all
               duration-300
-              hover:-translate-x-[8px]
+              hover:-translate-x-2
 
               ${
                 darkMode
@@ -250,7 +250,7 @@ function About() {
                 text-[13px]
                 font-normal
                 m-0
-                mb-[20px]
+                mb-5
                 ${
                   darkMode
                     ? "text-[#666]"
@@ -261,7 +261,7 @@ function About() {
               02
             </h2>
 
-            <h3 className="text-[20px] font-medium m-0 mb-[10px]">
+            <h3 className="text-[20px] font-medium m-0 mb-2.5">
               Made for Everyday
             </h3>
 
@@ -284,12 +284,12 @@ function About() {
           {/* CARD 03 */}
           <div
             className={`
-              p-[28px]
+              p-7
               border
               rounded-[14px]
               transition-all
               duration-300
-              hover:-translate-x-[8px]
+              hover:-translate-x-2
 
               ${
                 darkMode
@@ -313,7 +313,7 @@ function About() {
                 text-[13px]
                 font-normal
                 m-0
-                mb-[20px]
+                mb-5
                 ${
                   darkMode
                     ? "text-[#666]"
@@ -324,7 +324,7 @@ function About() {
               03
             </h2>
 
-            <h3 className="text-[20px] font-medium m-0 mb-[10px]">
+            <h3 className="text-[20px] font-medium m-0 mb-2.5">
               Style Meets Quality
             </h3>
 

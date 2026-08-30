@@ -9,13 +9,13 @@ function Contact() {
       className={`
         min-h-screen
         px-[8%]
-        py-[100px]
+        py-25
         flex
         items-center
         transition-all
         duration-300
-        max-[800px]:px-[25px]
-        max-[800px]:py-[70px]
+        max-[800px]:px-6.25
+        max-[800px]:py-17.5
 
         ${
           darkMode
@@ -24,10 +24,10 @@ function Contact() {
         }
       `}
     >
-      <div className="w-full max-w-[1250px] mx-auto">
+      <div className="w-full max-w-312.5 mx-auto">
 
         {/* HEADING */}
-        <div className="mb-[70px]">
+        <div className="mb-17.5">
 
           <span
             className={`
@@ -49,7 +49,7 @@ function Contact() {
               leading-[0.9]
               font-normal
               tracking-[-5px]
-              my-[25px]
+              my-6.25
               max-[800px]:tracking-[-3px]
             "
           >
@@ -72,7 +72,7 @@ function Contact() {
 
           <p
             className={`
-              max-w-[480px]
+              max-w-120
               leading-[1.7]
               text-[15px]
               ${
@@ -93,14 +93,14 @@ function Contact() {
           className="
             grid
             grid-cols-[0.7fr_1.3fr]
-            gap-[100px]
+            gap-25
             max-[800px]:grid-cols-1
-            max-[800px]:gap-[60px]
+            max-[800px]:gap-15
           "
         >
 
           {/* INFO */}
-          <div className="flex flex-col gap-[35px]">
+          <div className="flex flex-col gap-8.75">
 
             <div>
               <span
@@ -109,7 +109,7 @@ function Contact() {
                   text-[12px]
                   uppercase
                   tracking-[2px]
-                  mb-[8px]
+                  mb-2
                   ${
                     darkMode
                       ? "text-[#555]"
@@ -142,7 +142,7 @@ function Contact() {
                   text-[12px]
                   uppercase
                   tracking-[2px]
-                  mb-[8px]
+                  mb-2
                   ${
                     darkMode
                       ? "text-[#555]"
@@ -175,7 +175,7 @@ function Contact() {
                   text-[12px]
                   uppercase
                   tracking-[2px]
-                  mb-[8px]
+                  mb-2
                   ${
                     darkMode
                       ? "text-[#555]"
@@ -197,21 +197,21 @@ function Contact() {
                   }
                 `}
               >
-                New Delhi, India
+                Karnal, Haryana, India
               </p>
             </div>
 
           </div>
 
           {/* FORM */}
-          <form className="flex flex-col gap-[18px]">
+          <form className="flex flex-col gap-4.5">
 
             {/* NAME + EMAIL */}
             <div
               className="
                 grid
                 grid-cols-2
-                gap-[18px]
+                gap-4.5
                 max-[800px]:grid-cols-1
               "
             >
@@ -223,11 +223,11 @@ function Contact() {
                   w-full
                   box-border
                   border
-                  px-[18px]
-                  py-[17px]
+                  px-4.5
+                  py-4.25
                   text-[14px]
                   outline-none
-                  rounded-[8px]
+                  rounded-lg
                   transition-all
                   duration-300
                   font-inherit
@@ -261,11 +261,11 @@ function Contact() {
                   w-full
                   box-border
                   border
-                  px-[18px]
-                  py-[17px]
+                  px-4.5
+                  py-4.25
                   text-[14px]
                   outline-none
-                  rounded-[8px]
+                  rounded-lg
                   transition-all
                   duration-300
                   font-inherit
@@ -302,11 +302,11 @@ function Contact() {
                 w-full
                 box-border
                 border
-                px-[18px]
-                py-[17px]
+                px-4.5
+                py-4.25
                 text-[14px]
                 outline-none
-                rounded-[8px]
+                rounded-lg
                 transition-all
                 duration-300
                 font-inherit
@@ -341,11 +341,11 @@ function Contact() {
                 w-full
                 box-border
                 border
-                px-[18px]
-                py-[17px]
+                px-4.5
+                py-4.25
                 text-[14px]
                 outline-none
-                rounded-[8px]
+                rounded-lg
                 transition-all
                 duration-300
                 font-inherit
@@ -378,8 +378,8 @@ function Contact() {
               type="submit"
               className={`
                 self-start
-                px-[25px]
-                py-[15px]
+                px-6.25
+                py-3.75
                 border
                 rounded-[30px]
                 text-[14px]

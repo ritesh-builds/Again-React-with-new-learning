@@ -232,7 +232,7 @@ const Footer = () => {
             className="
               flex
               flex-col
-              gap-[12px]
+              gap-3
               max-[650px]:col-span-2
             "
           >
@@ -240,8 +240,8 @@ const Footer = () => {
             <span
               className={
                 darkMode
-                  ? "text-[#555] text-[11px] uppercase tracking-[2px] mb-[5px]"
-                  : "text-[#888] text-[11px] uppercase tracking-[2px] mb-[5px]"
+                  ? "text-[#555] text-[11px] uppercase tracking-[2px] mb-1.25"
+                  : "text-[#888] text-[11px] uppercase tracking-[2px] mb-1.25"
               }
             >
               Contact
@@ -292,7 +292,7 @@ const Footer = () => {
       <div
         className={`
           h-px
-          my-[50px]
+          my-12.5
           ${
             darkMode
               ? "bg-[#222]"
@@ -310,7 +310,7 @@ const Footer = () => {
           text-[11px]
           max-[600px]:flex-col
           max-[600px]:items-start
-          max-[600px]:gap-[10px]
+          max-[600px]:gap-2.5
 
           ${
             darkMode

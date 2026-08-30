@@ -8,7 +8,7 @@ function Navbar() {
   return (
     <nav
       className={
-        `w-full flex items-center justify-between px-[40px] py-[20px] relative z-100 border-b transition-all duration-300
+        `w-full flex items-center justify-between px-10 py-5 relative z-100 border-b transition-all duration-300
 
         ${
           darkMode
@@ -42,7 +42,7 @@ function Navbar() {
       </Link>
 
       {/* NAV LINKS */}
-      <div className="flex items-center gap-[40px]">
+      <div className="flex items-center gap-10">
 
         <NavLink
           to="/"
@@ -154,14 +154,14 @@ function Navbar() {
       </div>
 
       {/* RIGHT SIDE */}
-      <div className="flex items-center gap-[15px]">
+      <div className="flex items-center gap-3.75">
 
         {/* THEME BUTTON */}
         <button
           onClick={toggleTheme}
           className={`
-            w-[40px]
-            h-[40px]
+            w-10
+            h-10
             rounded-full
             cursor-pointer
             text-[18px]
@@ -185,8 +185,8 @@ function Navbar() {
         <Link
           to="/login"
           className={`
-            px-[20px]
-            py-[10px]
+            px-5
+            py-2.5
             rounded-[25px]
             border
             no-underline
