@@ -1,9 +1,35 @@
 import { useParams } from 'react-router-dom'
 import { useTheme } from '../context/ThemeContext'
+import { useEffect } from 'react'
+import axios from 'axios'
 
 function User() {
     const {userId} = useParams()
     const { darkMode } = useTheme()
+
+    useEffect(() => {
+      const getuser = async () => {
+        const token = localStorage.getItem("accessToken");
+
+        try {
+          const response = await axios.get(
+            "http://localhost:8080/api/user/hello", 
+            {
+            headers: {
+            Authorization: `Bearer ${token}`
+          }
+        }
+      )
+
+        console.log("Protected API response:", response.data);
+          
+        } catch (error) {
+          console.log("Error: ", error);
+          
+        }
+      }
+      getuser()
+    }, [])
   return (
     <div 
         className={`

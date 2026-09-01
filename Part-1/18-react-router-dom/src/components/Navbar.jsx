@@ -8,8 +8,19 @@ function Navbar() {
   return (
     <nav
       className={
-        `w-full flex items-center justify-between px-10 py-5 relative z-100 border-b transition-all duration-300
-
+        ` fixed
+          top-0
+          left-0
+          w-full
+          flex
+          items-center
+          justify-between
+          px-10
+          py-5
+          z-[100]
+          border-b
+          transition-all
+          duration-300
         ${
           darkMode
             ? "bg-[#080808] border-[#1f1f1f]"

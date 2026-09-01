@@ -1,34 +1,51 @@
 import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
+import axios from 'axios'
 
 function CreateAccountForm({ onSwitch }) {
   const { darkMode } = useTheme();
 
-  const [fullname, setFullname] = useState("");
+  const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [message, setMessage] = useState("");
 
-  const handleSignup = (evt) => {
-    evt.preventDefault();
+  const handleSignup = async (evt) => {
+  evt.preventDefault();
+  console.log("SIGNUP FUNCTION CALLED");
+  if (password !== confirmPassword) {
+    alert("Passwords do not match.");
+    return;
+  }
 
-    if (password !== confirmPassword) {
-      alert("Passwords do not match.");
-      return;
-    }
-
-    const signupData = {
-      fullname,
-      email,
-      password,
-      confirmPassword,
-    };
-
-    console.log("Signup Data:", signupData);
-
-    // Later:
-    // axios.post("http://localhost:8080/api/auth/signup", signupData)
+  const signupData = {
+    username,
+    email,
+    password,
   };
+
+  try {
+    const response = await axios.post(
+      "http://localhost:8080/api/user/register",
+      signupData
+    );
+
+    console.log("Server Response:", response.data);
+    setMessage(response.data.message);
+
+    setUsername("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    
+  } catch (error) {
+    console.log("Signup Error:", error);
+  }
+
+
+};
+  
 
   return (
     <section
@@ -273,9 +290,9 @@ function CreateAccountForm({ onSwitch }) {
                       `
                   }
                 `}
-                value={fullname}
+                value={username}
                 onChange={(evt) => {
-                  setFullname(evt.target.value);
+                  setUsername(evt.target.value);
                 }}
               />
 
@@ -467,6 +484,11 @@ function CreateAccountForm({ onSwitch }) {
 
             </div>
 
+            {message && (
+              <p className="text-green-500 text-[13px] mb-[15px]">
+                {message}
+              </p>
+            )}    
 
             {/* SUBMIT */}
             <button

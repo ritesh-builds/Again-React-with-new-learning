@@ -1,13 +1,15 @@
 import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext.jsx";
+import axios from "axios";
 
 function LoginForm({ onSwitch }) {
   const { darkMode } = useTheme();
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("")
 
-  const handleLogin = (evt) => {
+  const handleLogin = async (evt) => {
     evt.preventDefault();
 
     const loginData = {
@@ -17,8 +19,28 @@ function LoginForm({ onSwitch }) {
 
     console.log("Login Data:", loginData);
 
-    // Later:
-    // axios.post("http://localhost:8080/api/auth/login", loginData)
+    try {
+      const response = await axios.post(
+        "http://localhost:8080/auth/login",
+        loginData
+      );
+
+      console.log("Server response: ", response.data);
+
+      setMessage(response.data.message);
+
+      localStorage.setItem(
+        "accessToken",
+        response.data.accessToken
+      );
+
+      setEmail("");
+      setPassword("");
+
+    } catch (error) {
+      console.log("Login error: ", error);
+    }
+    
   };
 
   return (
@@ -357,7 +379,12 @@ function LoginForm({ onSwitch }) {
               </button>
 
             </div>
-
+            
+             {message && (
+              <p className="text-green-500 text-[13px] mb-[15px]">
+                {message}
+              </p>
+            )} 
 
             {/* SUBMIT */}
             <button
