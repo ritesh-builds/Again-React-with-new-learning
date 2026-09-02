@@ -25,13 +25,15 @@ const Login = () => {
 			}} 
 			type="email" 
 			placeholder='email' />
+			<br/>
 
       <input 
 			value={password} 
 			onChange={(evt) => {
 				setPassword(evt.target.value)
 			}} type="password" placeholder='*******' />
-      
+
+			<br/>
 			<button onClick={handleSubmit}>Submit</button>
     </div>
   )

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext.jsx";
 import axios from "axios";
+import axiosInstance from "../../api/axiosInstance.js";
 
 function LoginForm({ onSwitch }) {
   const { darkMode } = useTheme();
@@ -32,6 +33,11 @@ function LoginForm({ onSwitch }) {
       localStorage.setItem(
         "accessToken",
         response.data.accessToken
+      );
+
+      localStorage.setItem(
+      "refreshToken",
+      response.data.refreshToken
       );
 
       setEmail("");
